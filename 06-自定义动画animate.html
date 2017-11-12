@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 100px;
+				top: 100px;
+			}
+			#box2{
+				position: absolute;
+				left: 100px;
+				top:500px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<div id="box2"></div>
+	</body>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		// 第一个参数：需要运动什么属性 json格式  
+		//	 *  第二参数： 运动需要的时间  单位毫秒     也支持固定字符串 ：slow  fast  normal
+		//swing 慢快慢 //默认     linear 匀速）
+		//对比
+		$('#box').animate({
+			width:900,
+			height:'200px',
+//			left:200,
+//			top:200
+		},'slow','swing')
+		
+		$('#box2').animate({
+			width:900,
+			height:'200px',
+			
+		},'slow','linear')
+	</script>
+</html>

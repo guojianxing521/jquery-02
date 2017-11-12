@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				margin-top: 50px;
+				width: 200px;
+				height: 200px;
+				background: red;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="单击显示" />
+		<input type="button" value="单击隐藏" />
+		<input type="button" value="单击先显示后隐藏" />
+		<div id="box"></div>
+	</body>
+	<script src="jq.js"></script>
+	<script>
+		// 第一个参数： 动画执行时间  单位是毫秒 时间越大 效果越慢 时间不但可以写具体数值  还可以接收  一些固定的字符串
+		// 固定的字符串  "fast" 快  （200ms）      "slow"(600ms) 慢         "normal" (400ms) 正常  默认是normal   
+		// 如果写其他字符串 默认是normal
+		        
+		// 第二个参数 : 回调函数  当前动画执行完毕 之后 要执行的函数
+		$('input').eq(0).click(function(){
+			$('#box').show(1000,function(){
+//				alert('显示出来了');
+			});
+		})
+		$('input:eq(1)').click(function(){
+			$('#box').hide('normal');
+		})
+		//切换
+		$('input:eq(2)').click(function(){
+			$('#box').toggle('slow');
+		})
+		
+	</script>
+</html>
